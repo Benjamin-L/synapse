@@ -241,16 +241,6 @@ def parse_json_object_from_request(request, allow_empty_body=False):
     return content
 
 
-def assert_params_in_dict(body, required):
-    absent = []
-    for k in required:
-        if k not in body:
-            absent.append(k)
-
-    if len(absent) > 0:
-        raise SynapseError(400, "Missing params: %r" % absent, Codes.MISSING_PARAM)
-
-
 class RestServlet(object):
 
     """ A Synapse REST Servlet.

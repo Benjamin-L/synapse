@@ -31,7 +31,6 @@ from synapse.api.errors import (
 )
 from synapse.config.server import is_threepid_reserved
 from synapse.http.client import CaptchaServerHttpClient
-from synapse.http.servlet import assert_params_in_dict
 from synapse.replication.http.login import RegisterDeviceReplicationServlet
 from synapse.replication.http.register import (
     ReplicationPostRegisterActionsServlet,
@@ -39,6 +38,7 @@ from synapse.replication.http.register import (
 )
 from synapse.types import RoomAlias, RoomID, UserID, create_requester
 from synapse.util.async_helpers import Linearizer
+from synapse.util.dictutils import assert_params_in_dict
 from synapse.util.threepids import check_3pid_allowed
 
 from ._base import BaseHandler
